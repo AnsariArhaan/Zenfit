@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pulse — Train With Intent</title>
+<title>ZenFit — Train With Intent</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
   /* ------------------------------------------------
-     PULSE — design tokens
+     ZENFIT — design tokens
      base: deep indigo-violet (not flat black on purpose)
-     coral  = heart rate / brand pulse
+     coral  = heart rate / brand zenfit
      amber  = energy, calories
      mint   = steps, progress, "good" states
   -------------------------------------------------*/
@@ -21,8 +21,8 @@
     --base-alt: #1D1A3B;
     --panel: #201C42;
     --panel-hi: #292350;
-    --pulse: #FF4D6D;
-    --pulse-dim: #ff4d6d33;
+    --zenfit: #FF4D6D;
+    --zenfit-dim: #ff4d6d33;
     --amber: #FFB84D;
     --mint: #46F2B6;
     --text: #F4F1EC;
@@ -54,7 +54,7 @@
   button{ font-family:inherit; cursor:pointer; }
   ul{ margin:0; padding:0; list-style:none; }
   img{ max-width:100%; display:block; }
-  ::selection{ background:var(--pulse); color:#14122A; }
+  ::selection{ background:var(--zenfit); color:#14122A; }
   :focus-visible{ outline:2px solid var(--mint); outline-offset:3px; }
 
   .wrap{ max-width:var(--wrap); margin:0 auto; padding:0 28px; }
@@ -62,9 +62,9 @@
     display:inline-flex; align-items:center; gap:8px;
     font-family:'JetBrains Mono', monospace;
     font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
-    color:var(--pulse); margin-bottom:14px;
+    color:var(--zenfit); margin-bottom:14px;
   }
-  .eyebrow::before{ content:''; width:16px; height:2px; background:var(--pulse); display:inline-block; }
+  .eyebrow::before{ content:''; width:16px; height:2px; background:var(--zenfit); display:inline-block; }
 
   /* ---------------- floating ambient quotes ---------------- */
   #floatingLayer{
@@ -86,20 +86,20 @@
     100%{ transform:translateY(-110vh) translateX(var(--dx,40px)); opacity:0; }
   }
 
-  /* ---------------- pulse-line page transition ---------------- */
-  #pulseTransition{
+  /* ---------------- zenfit-line page transition ---------------- */
+  #zenfitTransition{
     position:fixed; inset:0; z-index:900; pointer-events:none;
     display:flex; align-items:center; justify-content:center;
     background:var(--base);
     opacity:0;
   }
-  #pulseTransition svg{ width:70%; max-width:600px; }
-  #pulseTransition path{
-    fill:none; stroke:var(--pulse); stroke-width:3;
+  #zenfitTransition svg{ width:70%; max-width:600px; }
+  #zenfitTransition path{
+    fill:none; stroke:var(--zenfit); stroke-width:3;
     stroke-dasharray:1400; stroke-dashoffset:1400;
   }
-  #pulseTransition.run{ animation:flashScreen .68s ease forwards; }
-  #pulseTransition.run path{ animation:drawLine .68s ease forwards; }
+  #zenfitTransition.run{ animation:flashScreen .68s ease forwards; }
+  #zenfitTransition.run path{ animation:drawLine .68s ease forwards; }
   @keyframes flashScreen{
     0%{ opacity:0; } 15%{ opacity:1; } 85%{ opacity:1; } 100%{ opacity:0; }
   }
@@ -116,7 +116,7 @@
     height:74px;
   }
   .brand{ display:flex; align-items:center; gap:10px; font-size:1.7rem; }
-  .brand .beat{ color:var(--pulse); position:relative; width:22px; height:22px; }
+  .brand .beat{ color:var(--zenfit); position:relative; width:22px; height:22px; }
   .brand .beat svg{ width:100%; animation:heartbeat 1.15s ease-in-out infinite; }
   @keyframes heartbeat{
     0%,100%{ transform:scale(1); } 20%{ transform:scale(1.28); } 40%{ transform:scale(.96); }
@@ -131,7 +131,7 @@
   .nav-links button.active{ color:var(--text); }
   .nav-links button.active::after{
     content:''; position:absolute; left:14px; right:14px; bottom:4px; height:2px;
-    background:var(--pulse); border-radius:2px;
+    background:var(--zenfit); border-radius:2px;
   }
   .nav-actions{ display:flex; gap:10px; }
   .btn{
@@ -140,8 +140,8 @@
   }
   .btn:active{ transform:scale(.96); }
   .btn-ghost{ background:transparent; color:var(--text); border:1px solid var(--line); }
-  .btn-ghost:hover{ border-color:var(--pulse); }
-  .btn-solid{ background:var(--pulse); color:#160b13; box-shadow:0 8px 22px -8px var(--pulse-dim); }
+  .btn-ghost:hover{ border-color:var(--zenfit); }
+  .btn-solid{ background:var(--zenfit); color:#160b13; box-shadow:0 8px 22px -8px var(--zenfit-dim); }
   .btn-solid:hover{ box-shadow:0 10px 28px -6px #ff4d6d66; }
   .btn-mint{ background:var(--mint); color:#0d2b22; }
   .btn-amber{ background:var(--amber); color:#2b1d05; }
@@ -157,7 +157,7 @@
     display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center;
   }
   .hero h1{ font-size:clamp(3rem,6.5vw,5.2rem); }
-  .hero h1 span{ color:var(--pulse); }
+  .hero h1 span{ color:var(--zenfit); }
   .hero p.lead{ color:var(--muted); font-size:1.12rem; max-width:46ch; margin:20px 0 30px; }
   .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
 
@@ -166,9 +166,9 @@
     padding:26px; position:relative; overflow:hidden;
   }
   .monitor svg{ width:100%; height:120px; }
-  .monitor polyline{ fill:none; stroke:var(--pulse); stroke-width:2.4; }
+  .monitor polyline{ fill:none; stroke:var(--zenfit); stroke-width:2.4; }
   .monitor-readout{ display:flex; justify-content:space-between; margin-top:10px; }
-  .monitor-readout .num{ font-size:2rem; color:var(--pulse); }
+  .monitor-readout .num{ font-size:2rem; color:var(--zenfit); }
   .monitor-readout small{ color:var(--muted); display:block; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; }
 
   .quote-strip{
@@ -176,7 +176,7 @@
     padding:18px 24px; display:flex; align-items:center; gap:16px; color:var(--muted);
     font-style:italic;
   }
-  .quote-strip i{ color:var(--pulse); font-style:normal; }
+  .quote-strip i{ color:var(--zenfit); font-style:normal; }
 
   .stat-preview-grid{
     margin-top:60px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
@@ -185,7 +185,7 @@
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
     padding:22px; cursor:pointer; transition:transform .18s, border-color .18s;
   }
-  .stat-preview:hover{ transform:translateY(-4px); border-color:var(--pulse); }
+  .stat-preview:hover{ transform:translateY(-4px); border-color:var(--zenfit); }
   .stat-preview .val{ font-size:2.1rem; }
   .stat-preview .lbl{ color:var(--muted); font-size:.82rem; margin-top:4px; }
 
@@ -200,7 +200,7 @@
     width:44px; height:44px; border-radius:12px; border:1px solid var(--line); background:var(--base-alt);
     color:var(--text); font-size:1.05rem; transition:all .15s;
   }
-  .share-icons button:hover{ background:var(--pulse); color:#160b13; border-color:var(--pulse); }
+  .share-icons button:hover{ background:var(--zenfit); color:#160b13; border-color:var(--zenfit); }
 
   /* ---------------- section heading reused ---------------- */
   .section-head{ margin-bottom:44px; }
@@ -213,12 +213,12 @@
     background:var(--panel); border:1px solid var(--line); color:var(--muted);
     padding:8px 16px; border-radius:100px; font-size:.85rem; font-weight:600; transition:all .15s;
   }
-  .chip.active{ background:var(--pulse); border-color:var(--pulse); color:#160b13; }
+  .chip.active{ background:var(--zenfit); border-color:var(--zenfit); color:#160b13; }
   .chip:hover{ color:var(--text); }
 
   .workout-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
   .w-card{
-    background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--pulse);
+    background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--zenfit);
     border-radius:14px; padding:22px;
   }
   .w-card[data-focus="cutting"]{ border-left-color:var(--mint); }
@@ -241,17 +241,17 @@
     margin-top:14px; background:none; border:1px solid var(--line); color:var(--text);
     padding:7px 14px; border-radius:9px; font-size:.8rem; font-weight:700; width:100%;
   }
-  .w-card .toggle-btn:hover{ border-color:var(--pulse); }
+  .w-card .toggle-btn:hover{ border-color:var(--zenfit); }
 
   .hype-corner{ position:relative; margin-top:60px; padding:50px 20px; min-height:220px; }
   .bubble{
-    position:absolute; background:var(--panel-hi); border:2px solid var(--pulse);
+    position:absolute; background:var(--panel-hi); border:2px solid var(--zenfit);
     border-radius:16px; padding:12px 18px; font-weight:800; font-size:.95rem;
     animation:bob 3.4s ease-in-out infinite;
   }
   .bubble::after{
     content:''; position:absolute; bottom:-9px; left:24px; width:16px; height:16px;
-    background:var(--panel-hi); border-right:2px solid var(--pulse); border-bottom:2px solid var(--pulse);
+    background:var(--panel-hi); border-right:2px solid var(--zenfit); border-bottom:2px solid var(--zenfit);
     transform:rotate(45deg);
   }
   @keyframes bob{ 0%,100%{ transform:translateY(0) rotate(var(--r,0deg)); } 50%{ transform:translateY(-10px) rotate(var(--r,0deg)); } }
@@ -299,19 +299,19 @@
     border:1px solid var(--line);
   }
   .flip-front{ background:var(--panel); }
-  .flip-front i{ font-size:1.8rem; color:var(--pulse); margin-bottom:10px; }
+  .flip-front i{ font-size:1.8rem; color:var(--zenfit); margin-bottom:10px; }
   .flip-front h5{ font-size:1.05rem; font-weight:800; }
   .flip-back{ background:var(--panel-hi); transform:rotateY(180deg); font-size:.82rem; color:var(--muted); }
 
   /* ---------------- BLOG ---------------- */
   .blog-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
   .b-card{ background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
-  .b-card .banner{ height:90px; background:linear-gradient(135deg,var(--pulse),var(--amber)); }
+  .b-card .banner{ height:90px; background:linear-gradient(135deg,var(--zenfit),var(--amber)); }
   .b-card .body{ padding:20px; }
   .b-card h4{ font-size:1.1rem; margin-bottom:8px; }
   .b-card p{ color:var(--muted); font-size:.87rem; }
   .b-card .full{ display:none; color:var(--muted); font-size:.87rem; margin-top:8px; }
-  .b-card .read-more{ margin-top:10px; color:var(--pulse); font-weight:700; font-size:.85rem; background:none; border:none; padding:0; }
+  .b-card .read-more{ margin-top:10px; color:var(--zenfit); font-weight:700; font-size:.85rem; background:none; border:none; padding:0; }
 
   /* ---------------- ABOUT ---------------- */
   .about-grid{ display:grid; grid-template-columns:1.2fr .8fr; gap:50px; }
@@ -319,7 +319,7 @@
   .team-card{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px; flex:1; min-width:150px; text-align:center; }
   .team-card .avatar{
     width:56px; height:56px; border-radius:50%; margin:0 auto 10px; display:flex; align-items:center; justify-content:center;
-    background:var(--base-alt); font-weight:800; color:var(--pulse);
+    background:var(--base-alt); font-weight:800; color:var(--zenfit);
   }
 
   footer{ border-top:1px solid var(--line); padding:34px 0; text-align:center; color:var(--muted); font-size:.85rem; position:relative; z-index:2; }
@@ -337,7 +337,7 @@
   .modal-close{ position:absolute; top:16px; right:16px; background:none; border:none; color:var(--muted); font-size:1.2rem; }
   .modal-tabs{ display:flex; gap:6px; margin-bottom:22px; background:var(--base-alt); padding:5px; border-radius:11px; }
   .modal-tabs button{ flex:1; background:none; border:none; color:var(--muted); padding:9px; border-radius:8px; font-weight:700; }
-  .modal-tabs button.active{ background:var(--pulse); color:#160b13; }
+  .modal-tabs button.active{ background:var(--zenfit); color:#160b13; }
   .modal-panel input{
     width:100%; background:var(--base-alt); border:1px solid var(--line); color:var(--text);
     padding:11px 13px; border-radius:9px; margin-bottom:12px;
@@ -350,7 +350,7 @@
   /* ---------------- TOAST ---------------- */
   #toastHost{ position:fixed; bottom:24px; right:24px; z-index:1000; display:flex; flex-direction:column; gap:10px; }
   .toast{
-    background:var(--panel-hi); border:1px solid var(--pulse); color:var(--text);
+    background:var(--panel-hi); border:1px solid var(--zenfit); color:var(--text);
     padding:13px 20px; border-radius:11px; font-size:.87rem; font-weight:600;
     animation:toastIn .25s ease;
   }
@@ -379,7 +379,7 @@
 
 <div id="floatingLayer"></div>
 
-<div id="pulseTransition">
+<div id="zenfitTransition">
   <svg viewBox="0 0 600 100"><path d="M0,50 L180,50 L210,10 L240,90 L270,50 L600,50"/></svg>
 </div>
 
@@ -389,7 +389,7 @@
       <span class="beat">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l2 8 4-16 3 12 2-4h5"/></svg>
       </span>
-      PULSE
+      ZENFIT
     </div>
     <ul class="nav-links" id="navLinks">
       <li><button data-page="home" class="active">Home</button></li>
@@ -416,7 +416,7 @@
         <div>
           <div class="eyebrow">Train with intent</div>
           <h1>Every rep is a <span>heartbeat.</span><br>Make it count.</h1>
-          <p class="lead">Pulse brings your workouts, your macros, your progress and your people into one place — home or gym, cutting or bulking, beginner or lifer.</p>
+          <p class="lead">ZenFit brings your workouts, your macros, your progress and your people into one place — home or gym, cutting or bulking, beginner or lifer.</p>
           <div class="hero-actions">
             <button class="btn btn-solid" onclick="navigate('workouts')">Browse Workouts</button>
             <button class="btn btn-ghost" onclick="navigate('tracker')">Open Tracker</button>
@@ -438,7 +438,7 @@
 
       <div class="stat-preview-grid">
         <div class="stat-preview" onclick="navigate('tracker')">
-          <div class="val mono" style="color:var(--pulse)">22.4</div>
+          <div class="val mono" style="color:var(--zenfit)">22.4</div>
           <div class="lbl">Example BMI — Normal range</div>
         </div>
         <div class="stat-preview" onclick="navigate('tracker')">
@@ -501,7 +501,7 @@
           <div class="ring-wrap">
             <svg width="150" height="150">
               <circle class="ring-track" cx="75" cy="75" r="60"/>
-              <circle class="ring-fill" id="bmiRing" cx="75" cy="75" r="60" stroke="var(--pulse)" stroke-dasharray="377" stroke-dashoffset="377"/>
+              <circle class="ring-fill" id="bmiRing" cx="75" cy="75" r="60" stroke="var(--zenfit)" stroke-dasharray="377" stroke-dashoffset="377"/>
             </svg>
             <div class="ring-center"><span class="big mono" id="bmiValue">--</span><small id="bmiLabel">Enter details</small></div>
           </div>
@@ -562,7 +562,7 @@
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Blog</div>
-        <h2>From the Pulse notebook.</h2>
+        <h2>From the ZenFit notebook.</h2>
       </div>
       <div class="blog-grid" id="blogGrid"></div>
     </div>
@@ -573,10 +573,10 @@
     <div class="wrap">
       <div class="about-grid">
         <div>
-          <div class="eyebrow">About Pulse</div>
+          <div class="eyebrow">About ZenFit</div>
           <h2 style="font-size:2.6rem;">Built by lifters, for lifters.</h2>
           <p style="color:var(--muted);margin-top:18px;max-width:56ch;">
-            Pulse started as a class project and turned into something we actually wanted to use —
+            ZenFit started as a class project and turned into something we actually wanted to use —
             a single place to plan a session, track a number, and remember why you started.
             No fluff, no locked-behind-paywall macros, just the tools we wished existed on day one.
           </p>
@@ -587,9 +587,9 @@
           </div>
         </div>
         <div class="monitor">
-          <div class="eyebrow" style="margin-bottom:16px;">Why "Pulse"?</div>
+          <div class="eyebrow" style="margin-bottom:16px;">Why "ZenFit"?</div>
           <p style="color:var(--muted);font-size:.92rem;">
-            A pulse is honest — it speeds up when you push and settles when you rest.
+            A zenfit is honest — it speeds up when you push and settles when you rest.
             That's the whole philosophy: train hard, track it honestly, recover on purpose.
           </p>
         </div>
@@ -600,7 +600,7 @@
 </main>
 
 <footer>
-  <div class="wrap">PULSE — student project prototype · built to move, not just to look good.</div>
+  <div class="wrap">ZENFIT — student project prototype · built to move, not just to look good.</div>
 </footer>
 
 <!-- ================= AUTH MODAL ================= -->
@@ -631,7 +631,7 @@
 
 <script>
 /* =====================================================
-   PULSE — app logic
+   ZENFIT — app logic
    everything runs in-memory, nothing is persisted,
    this is a front-end prototype for a class project
 ===================================================== */
@@ -736,9 +736,9 @@ let currentLocation = "all";
 let currentFocus = "all";
 let tipIndex = 0;
 
-/* ---------- navigation + pulse transition ---------- */
+/* ---------- navigation + zenfit transition ---------- */
 function navigate(pageId){
-  const overlay = document.getElementById('pulseTransition');
+  const overlay = document.getElementById('zenfitTransition');
   overlay.classList.remove('run'); void overlay.offsetWidth; // restart animation
   overlay.classList.add('run');
 
@@ -967,13 +967,13 @@ function fakeSubmit(kind){
 
 /* ---------- share ---------- */
 function shareWhatsApp(){
-  window.open('https://wa.me/?text=' + encodeURIComponent("I'm tracking my fitness journey on Pulse 💪"), '_blank');
+  window.open('https://wa.me/?text=' + encodeURIComponent("I'm tracking my fitness journey on ZenFit 💪"), '_blank');
 }
 function shareTwitter(){
-  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("Tracking gains on Pulse today 💪"), '_blank');
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("Tracking gains on ZenFit today 💪"), '_blank');
 }
 function copyLink(){
-  const fakeLink = 'https://pulse-fit.app/journey/demo123';
+  const fakeLink = 'https://zenfit-fit.app/journey/demo123';
   navigator.clipboard.writeText(fakeLink).then(()=>{
     showToast('Link copied — go share your progress!');
   }).catch(()=>{

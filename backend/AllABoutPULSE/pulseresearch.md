@@ -1,4 +1,4 @@
-# Pulse — Research & Environment Setup
+# ZenFit — Research & Environment Setup
 
 ## Why these choices
 
@@ -34,6 +34,6 @@ better learning outcome for the project.
 5. Run `npm install`
 6. Copy `.env.example` to `.env` and fill in your own `MONGO_URI` and
    `JWT_SECRET`
-7. Run `npm run dev` — should print "Pulse backend running on port 5000"
+7. Run `npm run dev` — should print "ZenFit backend running on port 5000"
    and "MongoDB connected"
 8. Confirm by visiting `http://localhost:5000/api/health`

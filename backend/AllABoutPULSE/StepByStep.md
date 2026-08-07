@@ -1,13 +1,13 @@
-# Pulse — Step by Step Log
+# ZenFit — Step by Step Log
 
 ## Session 1: Project Setup
 
-1. Created base folder `pulse/backend` in VS Code (via File Explorer / Desktop)
+1. Created base folder `zenfit/backend` in VS Code (via File Explorer / Desktop)
 2. Inside `backend/`, created subfolders: `config/`, `models/`, `routes/`, `controllers/`, `middleware/`
-3. Created folder `AllABoutPULSE/` inside `backend/` for documentation:
-   - `pulse_context.md`
-   - `aboutpulse.md`
-   - `pulseresearch.md`
+3. Created folder `AllABoutZENFIT/` inside `backend/` for documentation:
+   - `zenfit_context.md`
+   - `aboutzenfit.md`
+   - `zenfitresearch.md`
    - `stepbystep.md` (this file)
 4. Ran `npm init -y` — this generated a default `package.json`
 5. Opened `package.json`, deleted the default content, pasted the real config:
@@ -18,12 +18,12 @@
 6. Ran `npm install` — this installed all packages and created `node_modules/` + `package-lock.json`
 7. Created `.env` in the root of `backend/` with:
    - `PORT=5000`
-   - `MONGO_URI=mongodb://127.0.0.1:27017/pulse`
+   - `MONGO_URI=mongodb://127.0.0.1:27017/zenfit`
    - `JWT_SECRET=Arhaan_12345`
    - `NODE_ENV=development`
     Where did the package.json config come from?
 
-Not magic — it's just standard fields for a Node/Express project, chosen deliberately for what Pulse needs:
+Not magic — it's just standard fields for a Node/Express project, chosen deliberately for what ZenFit needs:
 
 main: "server.js" — tells Node "this is the file to run when the app starts." Default from npm init -y was index.js, but our entry file is server.js, so it had to match or npm start would look for the wrong file.
 scripts — shortcuts you type instead of long commands:
@@ -61,20 +61,20 @@ config/db.js — just the MongoDB connection logic, pulled into its own file so 
 routes/healthRoutes.js — a single test route (/api/health) that just replies "I'm alive" with a timestamp. It exists purely so you can check the server + DB are working before building real features on top — like starting a car and checking the dashboard lights before driving anywhere.
 
 ### Hiccup we hit and fixed
-- Initially ran `npm init -y` and pasted `package.json` content while sitting in the **outer** `pulse` folder, not inside `backend/`. This created a duplicate, stale `package.json` in the wrong place.
+- Initially ran `npm init -y` and pasted `package.json` content while sitting in the **outer** `zenfit` folder, not inside `backend/`. This created a duplicate, stale `package.json` in the wrong place.
 - Diagnosed it by running `dir` in the terminal and comparing folder contents to what VS Code showed.
 - Turned out `backend/` already had its own correct `package.json` from an earlier paste — just needed to `cd backend` and run `npm install` there (since `node_modules` wasn't installed in that folder yet).
 
 ### Verification
 - Ran `npm run dev` from inside `backend/`
 - Terminal showed:
-  - `Pulse backend running on port 5000`
+  - `ZenFit backend running on port 5000`
   - `MongoDB connected: 127.0.0.1`
 - Visited `http://localhost:5000/api/health` in browser, got back:
 ```json
   {
     "status": "ok",
-    "message": "Pulse API is up and running",
+    "message": "ZenFit API is up and running",
     "timestamp": "2026-07-28T10:37:49.811Z"
   }
 ```

@@ -1,4 +1,4 @@
-# Pulse — Backend Build Context
+# ZenFit — Backend Build Context
 
 Tracks progress across sessions. This is the file your friend (frontend) and
 anyone else joining should read first to know exactly what's built and what's next.

@@ -1,6 +1,6 @@
-# About Pulse
+# About ZenFit
 
-Pulse is a college-level fitness tracking website — workouts, BMI/steps/
+ZenFit is a college-level fitness tracking website — workouts, BMI/steps/
 calorie tracking, supplements info, a blog, and user accounts. Originally
 built as a single-file HTML/CSS/JS prototype, now being rebuilt properly
 with a separate backend (Node/Express + MongoDB) and frontend
@@ -14,6 +14,3 @@ so logic stays separated as the app grows. Added a `/api/health` route
 just to confirm the server and DB connection both work before building
 real features on top. Verified everything runs with `npm run dev`.
 
-## Session 2 — Auth (coming up)
-Will add user registration/login with hashed passwords and JWT-based
-auth, so later routes (tracker, workouts, blog) can be protected per-user.
