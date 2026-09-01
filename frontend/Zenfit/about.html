@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZENFIT — About</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+<div id="floatingLayer"></div>
+
+<div id="pulseTransition">
+  <svg viewBox="0 0 600 100"><path d="M0,50 L180,50 L210,10 L240,90 L270,50 L600,50"/></svg>
+</div>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <span class="beat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l2 8 4-16 3 12 2-4h5"/></svg>
+      </span>
+      ZENFIT
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><button onclick="location.href='home.html'">Home</button></li>
+      <li><button onclick="location.href='workouts.html'">Workouts</button></li>
+      <li><button onclick="location.href='tracker.html'">Tracker</button></li>
+      <li><button onclick="location.href='supplements.html'">Supplements</button></li>
+      <li><button onclick="location.href='blog.html'">Blog</button></li>
+      <li><button class="active" onclick="location.href='about.html'">About</button></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn btn-ghost" onclick="location.href='login.html'">Log In</button>
+      <button class="btn btn-solid" onclick="location.href='login.html?tab=signup'">Sign Up</button>
+      <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page active" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <div class="eyebrow">About ZENFIT</div>
+          <h2 style="font-size:2.6rem;">Built by lifters, for lifters.</h2>
+          <p style="color:var(--muted);margin-top:18px;max-width:56ch;">
+            ZENFIT started as a class project and turned into something we actually wanted to use —
+            a single place to plan a session, track a number, and remember why you started.
+            No fluff, no locked-behind-paywall macros, just the tools we wished existed on day one.
+          </p>
+          <div class="team-row" id="teamRow"></div>
+        </div>
+        <div class="monitor">
+          <div class="eyebrow" style="margin-bottom:16px;">Why "ZENFIT"?</div>
+          <p style="color:var(--muted);font-size:.92rem;">
+            A pulse is honest — it speeds up when you push and settles when you rest.
+            That's the whole philosophy: train hard, track it honestly, recover on purpose.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">ZENFIT — student project prototype · built for better habits, not just better numbers.</div>
+</footer>
+
+<div id="toastHost"></div>
+
+<script src="common.js"></script>
+<script src="about.js"></script>
+</body>
+</html>

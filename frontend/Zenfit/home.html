@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZENFIT — Train With Intent</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<div id="floatingLayer"></div>
+
+<div id="pulseTransition">
+  <svg viewBox="0 0 600 100"><path d="M0,50 L180,50 L210,10 L240,90 L270,50 L600,50"/></svg>
+</div>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <span class="beat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l2 8 4-16 3 12 2-4h5"/></svg>
+      </span>
+      ZENFIT
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><button class="active" onclick="location.href='home.html'">Home</button></li>
+      <li><button onclick="location.href='workouts.html'">Workouts</button></li>
+      <li><button onclick="location.href='tracker.html'">Tracker</button></li>
+      <li><button onclick="location.href='supplements.html'">Supplements</button></li>
+      <li><button onclick="location.href='blog.html'">Blog</button></li>
+      <li><button onclick="location.href='about.html'">About</button></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn btn-ghost" onclick="location.href='login.html'">Log In</button>
+      <button class="btn btn-solid" onclick="location.href='login.html?tab=signup'">Sign Up</button>
+      <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page active" id="home">
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Train with intent</div>
+          <h1>Every rep builds a <span>better you.</span><br>Train with balance.</h1>
+          <p class="lead">ZENFIT brings your workouts, your macros, your progress and your people into one place — helping you train smarter, track consistently, and live with intent.</p>
+          <div class="hero-actions">
+            <button class="btn btn-solid" onclick="location.href='workouts.html'">Browse Workouts</button>
+            <button class="btn btn-ghost" onclick="location.href='tracker.html'">Open Tracker</button>
+          </div>
+        </div>
+        <div class="monitor">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <polyline id="ecgLine" points="0,60 40,60 60,20 80,100 100,60 160,60 180,40 200,80 220,60 400,60"/>
+          </svg>
+          <div class="monitor-readout">
+            <div><span class="num mono">128</span><small>Avg BPM Today</small></div>
+            <div><span class="num mono" style="color:var(--mint)">6,240</span><small>Steps Logged</small></div>
+            <div><span class="num mono" style="color:var(--amber)">410</span><small>Kcal Burned</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-strip"><i class="fa-solid fa-quote-left"></i><span id="quoteOfDay">Loading today's line...</span></div>
+
+      <div class="stat-preview-grid">
+        <div class="stat-preview" onclick="location.href='tracker.html'">
+          <div class="val mono" style="color:var(--pulse)">22.4</div>
+          <div class="lbl">Example BMI — Normal range</div>
+        </div>
+        <div class="stat-preview" onclick="location.href='tracker.html'">
+          <div class="val mono" style="color:var(--mint)">7,850 <span style="font-size:1rem;color:var(--muted)">/ 10k</span></div>
+          <div class="lbl">Daily Steps Goal</div>
+        </div>
+        <div class="stat-preview" onclick="location.href='tracker.html'">
+          <div class="val mono" style="color:var(--amber)">1,860 <span style="font-size:1rem;color:var(--muted)">kcal</span></div>
+          <div class="lbl">Calories Remaining</div>
+        </div>
+      </div>
+
+      <div class="share-card">
+        <div>
+          <h3>Share your journey</h3>
+          <p style="color:var(--muted);margin-top:6px;max-width:40ch;">Loop your friends in on today's session — accountability trains harder than willpower does.</p>
+        </div>
+        <div class="share-icons">
+          <button onclick="shareWhatsApp()" title="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+          <button onclick="shareTwitter()" title="Share on X"><i class="fa-brands fa-x-twitter"></i></button>
+          <button onclick="copyLink()" title="Copy link"><i class="fa-solid fa-link"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">ZENFIT — student project prototype · built for better habits, not just better numbers.</div>
+</footer>
+
+<div id="toastHost"></div>
+
+<script src="common.js"></script>
+<script src="home.js"></script>
+</body>
+</html>
