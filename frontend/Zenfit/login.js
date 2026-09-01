@@ -13,13 +13,19 @@
 })();
 
 /* ---------- API-backed authentication ---------- */
+// Use the same server when Express serves the page. The localhost fallback also
+// supports opening login.html directly during development.
+const apiBaseUrl = window.location.protocol === 'file:'
+  ? 'http://localhost:5000/api'
+  : '/api';
+
 async function authenticate(endpoint, body, button){
   button.disabled = true;
   const originalLabel = button.textContent;
   button.textContent = 'Please wait…';
 
   try {
-    const response = await fetch(`/api/auth/${endpoint}`, {
+    const response = await fetch(`${apiBaseUrl}/auth/${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
